@@ -45,7 +45,7 @@ class SiderUI extends React.Component {
                 设施巡检
               </div>
             <Menu
-                mode="inline"
+                mode="vertical"
                 theme="dark"
                 defaultSelectedKeys={['/home']}
                 selectedKeys={[this.props.history.location.pathname]}

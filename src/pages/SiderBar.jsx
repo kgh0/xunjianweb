@@ -3,7 +3,7 @@ import { Layout, Icon, Menu } from "antd"
 import { NavLink, withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import menuConfig from '../utils/menuConfig';
-
+import logoURL from '../images/logo.png';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -35,15 +35,16 @@ class SiderUI extends React.Component {
 
 
 
- 
+
 
 
     render() {
         let menu = this.props.menu || menuConfig
         return (<Sider theme="dark" className="sider" trigger={null} collapsible collapsed={!!this.props.collapsed}>
             <div className="logo">
-                设施巡检
-              </div>
+                <img className="logo-img" src={logoURL} alt="" /> &nbsp;&nbsp;
+                 {!this.props.collapsed &&<span>设施巡检</span>}
+            </div>
             <Menu
                 mode="vertical"
                 theme="dark"

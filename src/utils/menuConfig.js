@@ -32,28 +32,28 @@ const menuConfig = [
   },
   {
     title: '日常巡检',
-    link: '/xj',
+    link: '/rcxj',
     icon: 'user',
     children: [
       {
         title: '巡检计划',
-        link: '/xj/connect',
+        link: '/rcxj/patrolPlan',
       },
       {
         title: '巡检任务',
-        link: '/xj/connect',
+        link: '/rcxj/patrolTask',
       },
       {
         title: '问题上报',
-        link: '/xj/connect',
+        link: '/rcxj/patrolIssue',
       },
       {
         title: '巡检轨迹',
-        link: '/xj/connect',
+        link: '/rcxj/userTrack',
       },
       {
         title: '指令查询',
-        link: '/xj/connect',
+        link: '/rcxj/commandInfo',
       },
     ]
   }, {
@@ -63,15 +63,15 @@ const menuConfig = [
     children: [
       {
         title: '巡检小组',
-        link: '/xtgl/connect',
+        link: '/xtgl/groupManager',
       },
       {
         title: '责任区管理',
-        link: '/xtgl/connect',
+        link: '/xtgl/dutyAreaManager',
       },
       {
         title: '设备管理',
-        link: '/xtgl/connect',
+        link: '/xtgl/deviceManager',
       },
       {
         title: '字典管理',
@@ -86,19 +86,19 @@ const menuConfig = [
     children: [
       {
         title: '巡检主体',
-        link: '/xtpz/connect',
+        link: '/xtpz/patrolMainbody',
       },
       {
         title: '巡检项目',
-        link: '/xtpz/connect',
+        link: '/xtpz/patrolItemMgr',
       },
       {
         title: '问题类别',
-        link: '/xtpz/connect',
+        link: '/xtpz/issueMgr',
       },
       {
         title: '参数信息',
-        link: '/xtpz/connect',
+        link: '/xtpz/parameterInfo',
       }
     ]
   }

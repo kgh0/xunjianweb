@@ -16,8 +16,21 @@ const Home = lazy(() => import('./Home'));
 const GdMap = lazy(() => import('./GdMap'));
 const Connect = lazy(() => import('./Connect'));
 const List = lazy(() => import('./List'));
-const OLMap = lazy(()=>import('./OLMap'))
+const OLMap = lazy(()=>import('./OLMap'));
+const GroupManager = lazy(()=>import("./xtgl/GroupManager"));
+const DutyAreaManager = lazy(()=>import("./xtgl/DutyAreaManager"));
+const DeviceManager = lazy(()=>import("./xtgl/DeviceManager"));
 
+const PatrolPlan = lazy(()=>import("./rcxj/PatrolPlan"));
+const PatrolTask = lazy(()=>import("./rcxj/PatrolTask"));
+const PatrolIssue = lazy(()=>import("./rcxj/PatrolIssue"));
+const UserTrack = lazy(()=>import("./rcxj/UserTrack"));
+const CommandInfo = lazy(()=>import("./rcxj/CommandInfo"));
+
+const IssueMgr = lazy(()=>import("./xjpz/IssueMgr"));
+const ParameterInfo = lazy(()=>import("./xjpz/ParameterInfo"));
+const PatrolMainbody = lazy(()=>import("./xjpz/PatrolMainbody"));
+const PatrolItemMgr = lazy(()=>import("./xjpz/PatrolItemMgr"));
 
 const MainContent = () => {
     return (
@@ -28,6 +41,26 @@ const MainContent = () => {
                 <Route exact path="/user/connect" component={Connect} />
                 <Route exact path="/gdmap" component={GdMap} />
                 <Route exact path="/olmap" component={OLMap} />
+                
+                <Route exact path="/xtgl/groupManager" component={GroupManager} />
+                <Route exact path="/xtgl/dutyAreaManager" component={DutyAreaManager} />
+                <Route exact path="/xtgl/deviceManager" component={DeviceManager} />
+
+                <Route exact path="/rcxj/patrolPlan" component={PatrolPlan} />
+                <Route exact path="/rcxj/patrolTask" component={PatrolTask} />
+                <Route exact path="/rcxj/patrolIssue" component={PatrolIssue} />
+                <Route exact path="/rcxj/userTrack" component={UserTrack} />
+                <Route exact path="/rcxj/commandInfo" component={CommandInfo} />
+
+
+                <Route exact path="/xtpz/patrolMainbody" component={PatrolMainbody} />
+                <Route exact path="/xtpz/patrolItemMgr" component={PatrolItemMgr} />
+                <Route exact path="/xtpz/issueMgr" component={IssueMgr} />
+                <Route exact path="/xtpz/parameterInfo" component={ParameterInfo} />
+
+
+
+
                 <Redirect to="/home" />
             </Switch>
         </div>

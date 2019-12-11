@@ -23,7 +23,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="home-warp">
+      <div className="home">
         <div className="cart-list">
           {
             this.state.cartList.map((item) => {

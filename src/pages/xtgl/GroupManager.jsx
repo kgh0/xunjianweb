@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Form, Icon, Input, Button, Select, Row, Col, } from 'antd';
+import { Form, Icon, Input, Button, Select, Row, Col,Table } from 'antd';
 import xtgl from "./xtgl.less"
-
+import {StopSvg,logoSvg } from '../../images/svgicon.js'; 
 const { Option } = Select;
-const FormItem = Form.Item;
+const FormItem = Form.Item; 
 
 class GroupManagerUI extends React.Component {
 
@@ -74,18 +74,53 @@ class GroupManagerUI extends React.Component {
   renderOpBtn() {
     return (
       <div>
-         <Button >详情</Button>
-         <Button icon="add">添加</Button>
-         <Button >更改</Button>
-         <Button >删除</Button>
-         <Button><Icon type="message" style={{ fontSize: '16px', color: '#08c' }} />人员分配</Button>
+         <Button><Icon   component={StopSvg} style={{ fontSize: '16px', color: '#08c' }} />详情</Button>
+         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />添加</Button>
+         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />更改</Button>
+         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />删除</Button>
+         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />人员分配</Button>
       </div>
     );
   }
 
   renderTable(){
+    const dataSource = [
+      {
+        key: '1',
+        name: '胡彦斌',
+        age: 32,
+        address: '西湖区湖底公园1号',
+      },
+      {
+        key: '2',
+        name: '胡彦祖',
+        age: 42,
+        address: '西湖区湖底公园1号',
+      },
+    ];
+    
+    const columns = [
+      {
+        title: '姓名',
+        dataIndex: 'name',
+        key: 'name',
+      },
+      {
+        title: '年龄',
+        dataIndex: 'age',
+        key: 'age',
+      },
+      {
+        title: '住址',
+        dataIndex: 'address',
+        key: 'address',
+      },
+    ];
+    
+
+
     return (
-      <div></div>
+      <Table dataSource={dataSource} columns={columns} size="small" />
     );
   }
 
@@ -96,7 +131,7 @@ class GroupManagerUI extends React.Component {
     return (<div>
       <div> {this.renderQuery()} </div>
       <div>{this.renderOpBtn()}</div>
-      <div> GroupManagerUI</div>
+      <div> {this.renderTable()}</div>
     </div>);
   }
 }

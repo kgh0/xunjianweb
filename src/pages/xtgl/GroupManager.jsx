@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Form, Icon, Input, Button, Select, Row, Col,Table } from 'antd';
+import { Form, Icon, Input, Button, Select, Row, Col, Table } from 'antd';
 import xtgl from "./xtgl.less"
-import {StopSvg,logoSvg } from '../../images/svgicon.js'; 
+import { StopSvg, logoSvg } from '../../images/svgicon.js';
 const { Option } = Select;
-const FormItem = Form.Item; 
+const FormItem = Form.Item;
 
 class GroupManagerUI extends React.Component {
 
@@ -40,22 +40,21 @@ class GroupManagerUI extends React.Component {
     return (
       <Form layout="inline">
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
-          <Col md={8} sm={24}>
+          <Col md={16} sm={36}>
             <FormItem label="规则名称">
               {getFieldDecorator('name')(<Input placeholder="请输入" />)}
             </FormItem>
-          </Col>
-          <Col md={8} sm={24}>
+
             <FormItem label="使用状态">
               {getFieldDecorator('status')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
+                <Select placeholder="请选择"  style={{minWidth:"100px"}} >
                   <Option value="0">关闭</Option>
                   <Option value="1">运行中</Option>
-                </Select>,
+                </Select>
               )}
             </FormItem>
           </Col>
-          <Col md={8} sm={24}>
+          <Col md={8} sm={12}>
             <span className={xtgl.submitButtons}>
               <Button type="primary" htmlType="submit">
                 查询
@@ -74,16 +73,16 @@ class GroupManagerUI extends React.Component {
   renderOpBtn() {
     return (
       <div>
-         <Button><Icon   component={StopSvg} style={{ fontSize: '16px', color: '#08c' }} />详情</Button>
-         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />添加</Button>
-         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />更改</Button>
-         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />删除</Button>
-         <Button size="small"><Icon   component={logoSvg} style={{ fontSize: '16px', color: '#08c' }} />人员分配</Button>
+        <Button ><Icon component={StopSvg} />详情</Button>
+        <Button ><Icon component={StopSvg} />添加</Button>
+        <Button ><Icon component={logoSvg} />更改</Button>
+        <Button ><Icon component={logoSvg} />删除</Button>
+        <Button ><Icon component={logoSvg} />人员分配</Button>
       </div>
     );
   }
 
-  renderTable(){
+  renderTable() {
     const dataSource = [
       {
         key: '1',
@@ -98,7 +97,7 @@ class GroupManagerUI extends React.Component {
         address: '西湖区湖底公园1号',
       },
     ];
-    
+
     const columns = [
       {
         title: '姓名',
@@ -116,7 +115,7 @@ class GroupManagerUI extends React.Component {
         key: 'address',
       },
     ];
-    
+
 
 
     return (

@@ -16,7 +16,7 @@ class LoginUI extends React.Component {
         this.props.form.validateFields((err, values) => {
             debugger;
             if (!err) {
-                if (values.username == "admin" && values.password == '123') {
+                if (values.username === "admin" && values.password === '123') {
                     window.localStorage.setItem("loggedIn", true);
                     this.props.history.push("/");
                     debugger;

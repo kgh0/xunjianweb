@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Icon, Input, Button, Select, Row, Col, Table } from 'antd';
-import xtgl from "./xtgl.less"
+import  "./xtgl.less";
 import { StopSvg, logoSvg } from '../../images/svgicon.js';
 const { Option } = Select;
 const FormItem = Form.Item;
@@ -39,32 +39,30 @@ class GroupManagerUI extends React.Component {
     const { getFieldDecorator } = form;
     return (
       <Form layout="inline">
-        <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
-          <Col md={16} sm={36}>
-            <FormItem label="规则名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入" />)}
-            </FormItem>
+        {/* <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
+          <Col> */}
+        <FormItem label="规则名称">
+          {getFieldDecorator('name')(<Input placeholder="请输入" />)}
+        </FormItem>
 
-            <FormItem label="使用状态">
-              {getFieldDecorator('status')(
-                <Select placeholder="请选择"  style={{minWidth:"100px"}} >
-                  <Option value="0">关闭</Option>
-                  <Option value="1">运行中</Option>
-                </Select>
-              )}
-            </FormItem>
-          </Col>
-          <Col md={8} sm={12}>
-            <span className={xtgl.submitButtons}>
-              <Button type="primary" htmlType="submit">
-                查询
+        <FormItem label="使用状态">
+          {getFieldDecorator('status')(
+            <Select placeholder="请选择" style={{ minWidth: "100px" }} >
+              <Option value="0">关闭</Option>
+              <Option value="1">运行中</Option>
+            </Select>
+          )}
+        </FormItem>
+        <FormItem>
+          <Button type="primary" htmlType="submit">
+            查询
                       </Button>
-              <Button type="primary" style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
-                重置
+          <Button type="primary" style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
+            重置
                       </Button>
-            </span>
-          </Col>
-        </Row>
+        </FormItem>
+        {/* </Col>
+        </Row> */}
       </Form>
     );
 
@@ -72,7 +70,7 @@ class GroupManagerUI extends React.Component {
 
   renderOpBtn() {
     return (
-      <div>
+      <div className="divbtns" >
         <Button ><Icon component={StopSvg} />详情</Button>
         <Button ><Icon component={StopSvg} />添加</Button>
         <Button ><Icon component={logoSvg} />更改</Button>
@@ -127,7 +125,7 @@ class GroupManagerUI extends React.Component {
 
 
   render() {
-    return (<div>
+    return (<div className="gm">
       <div> {this.renderQuery()} </div>
       <div>{this.renderOpBtn()}</div>
       <div> {this.renderTable()}</div>

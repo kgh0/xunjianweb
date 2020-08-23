@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getUser } from "../action/LoginAction"
+import { bindActionCreators } from "redux";
+import { getUser } from "../redux/action/LoginAction"
 import { Form, Spin, message, Input, Icon, Button } from 'antd';
 import { Redirect } from 'react-router-dom';
 
@@ -14,12 +15,12 @@ class LoginUI extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-            debugger;
+             ;
             if (!err) {
                 if (values.username === "admin" && values.password === '123') {
                     window.localStorage.setItem("loggedIn", true);
                     this.props.history.push("/");
-                    debugger;
+                     ;
                     // let tmp = this.props.loginClick(values.username, values.password);
                     // console.log(tmp);
                 } else {
@@ -31,11 +32,11 @@ class LoginUI extends React.Component {
     }
 
     render() {
-        debugger;
+         
         const { isFetching, data, error } = this.props;
 
         if (!!data) {
-            debugger;
+             debugger;
             console.log(this.props.history);
             // this.props.history.push("/");
             window.localStorage.setItem("loggedIn", true);
@@ -82,7 +83,7 @@ class LoginUI extends React.Component {
 const WrappedNormalLoginForm = Form.create({ name: "normal_login" })(LoginUI);
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
+     ;
     const { isFetching, data, error } = state.login;
 
     return {
@@ -94,10 +95,7 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => ({
-    loginClick: (username, password) => {
-        debugger;
-        return dispatch(getUser(username, password));
-    }
+    loginClick:bindActionCreators(getUser,dispatch)
 })
 
 const Login = connect(

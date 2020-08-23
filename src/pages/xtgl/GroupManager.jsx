@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Icon, Input, Button, Select, Row, Col, Table } from 'antd';
-import  "./xtgl.less";
+import  "./GroupManager.less";
 import { StopSvg, logoSvg } from '../../images/svgicon.js';
 const { Option } = Select;
 const FormItem = Form.Item;
@@ -98,20 +98,34 @@ class GroupManagerUI extends React.Component {
 
     const columns = [
       {
-        title: '姓名',
+        title: '小组编号',
         dataIndex: 'name',
         key: 'name',
       },
       {
-        title: '年龄',
+        title: '小组名称',
         dataIndex: 'age',
         key: 'age',
       },
       {
-        title: '住址',
+        title: '负责人',
         dataIndex: 'address',
         key: 'address',
       },
+      {
+        title: '联系电话',
+        dataIndex: 'address',
+        key: 'address',
+      },
+      {
+        title: '状态',
+        dataIndex: 'address',
+        key: 'address',
+      }, {
+        title: '备注',
+        dataIndex: 'address',
+        key: 'address',
+      }
     ];
 
 
@@ -125,7 +139,8 @@ class GroupManagerUI extends React.Component {
 
 
   render() {
-    return (<div className="gm">
+    return (
+    <div className="gm">
       <div> {this.renderQuery()} </div>
       <div>{this.renderOpBtn()}</div>
       <div> {this.renderTable()}</div>
@@ -137,7 +152,6 @@ const GroupManagerForm = Form.create({ name: 'horizontal_login' })(GroupManagerU
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   // const { isFetching, data, error } = state.main;
   return {};
 }
@@ -145,14 +159,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   todo: (username) => {
-    debugger;
     return "";
   }
 })
 
-const temp = connect(
+const GroupManager = connect(
   mapStateToProps,
   mapDispatchToProps
 )(GroupManagerForm);
 
-export default temp;
+export default GroupManager;

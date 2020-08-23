@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Icon, Layout } from 'antd';
 import { connect } from 'react-redux';
-import { SideCollapse } from "../action/MainAction";
+import { SideCollapse } from "../redux/action/MainAction";
 import { NavLink, withRouter } from "react-router-dom"
 import menuConfig from '../utils/menuConfig';
 
@@ -12,7 +12,7 @@ class HeadUI extends React.Component {
 
 
     setMenu = (menu, pItem) => {
-        debugger;
+         ;
         return menu.map((item) => {
             if (item.children && item.children.length > 0) {
                 return (
@@ -42,7 +42,7 @@ class HeadUI extends React.Component {
 
 
     render() {
-        debugger;
+         ;
         let menu = this.props.menu || menuConfig
         return (
             <Header className="header">
@@ -56,14 +56,14 @@ class HeadUI extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
+     ;
     const { collapsed } = state.main;
     return { collapsed };
 }
 
 const mapDispatchToProps = dispatch => ({
     toggleSide: () => {
-        debugger;
+         ;
         return dispatch(SideCollapse());
     }
 })

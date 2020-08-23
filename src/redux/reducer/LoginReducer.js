@@ -1,16 +1,15 @@
 // import { combineReducers } from "redux";
-import {RECEIVE_POSTS,REQUEST_POSTS} from "../action/LoginAction";
+import {DO_LOGIN,REQUEST_POST} from "../action/actionTypes";
 
 
 
 const LoginReduce = (state = { isFetching: false }, action) => {
-    debugger;
     switch (action.type) {
-        case REQUEST_POSTS:
+        case REQUEST_POST:
             return Object.assign({}, state, {
                 isFetching: true
             });
-        case RECEIVE_POSTS:
+        case DO_LOGIN:
             return Object.assign({}, state, {
                 isFetching: false,
                 data: action.data,

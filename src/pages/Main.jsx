@@ -2,7 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { Redirect, Switch, Route, Link, withRouter } from 'react-router-dom';
 import { Layout, Menu, Spin } from 'antd';
 import { connect } from 'react-redux';
-import { getMenus } from "../action/MainAction"
+import { getMenus } from "../redux/action/MainAction"
+import { bindActionCreators } from "redux";
 
 // import Home from "./Home";
 // import GdMap from "./GdMap";
@@ -72,15 +73,16 @@ const MainContent = () => {
 class Main extends React.Component {
 
     componentWillMount() {
-        debugger;
-        const { getMenus } = this.props;
-        getMenus();
+         
+        const { getMenus2 } = this.props;
+        // getMenus();
+        getMenus2("admin");
     }
 
     render() {
-        debugger;
+         
         const loggedIn = window.localStorage.getItem("loggedIn");
-        const { isFetching, menu } = this.props;
+        const { isFetching } = this.props;
         return (
             loggedIn ? (<div >
                 {isFetching ?
@@ -102,17 +104,14 @@ class Main extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
-    const { isFetching, data, error } = state.main;
-    return { isFetching, menu: data, error };
+     debugger;
+    const { isFetching,  error } = state.main;
+    return { isFetching, error };
 }
 
 
 const mapDispatchToProps = dispatch => ({
-    getMenus: (username) => {
-        debugger;
-        return dispatch(getMenus(username));
-    }
+    getMenus2:bindActionCreators(getMenus, dispatch),
 })
 
 const temp = connect(

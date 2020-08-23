@@ -1,4 +1,5 @@
 import React from 'react';
+import "./DutyAreaManager.less"
 import { connect } from 'react-redux';
 class DutyAreaManagerUI  extends  React.Component{
     render(){
@@ -11,7 +12,7 @@ class DutyAreaManagerUI  extends  React.Component{
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
+     ;
     const { isFetching, data, error } = state.main;
     return {};
 }
@@ -19,14 +20,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     todo: (username) => {
-        debugger;
        return "";
     }
 })
 
-const temp = connect(
+const DutyAreaManager = connect(
     mapStateToProps,
     mapDispatchToProps
 )(DutyAreaManagerUI);
 
-export default temp;
+export default DutyAreaManager;

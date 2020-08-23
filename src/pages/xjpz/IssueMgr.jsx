@@ -11,7 +11,7 @@ class IssueMgrUI  extends  React.Component{
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
+     ;
     const { isFetching, data, error } = state.main;
     return {};
 }
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     todo: (username) => {
-        debugger;
+         ;
         // return dispatch(getMenus(username));
     }
 })

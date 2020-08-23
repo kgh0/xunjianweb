@@ -39,6 +39,7 @@ class SiderUI extends React.Component {
 
 
     render() {
+        debugger;
         let menu = this.props.menu || menuConfig
         return (<Sider theme="dark" className="sider" trigger={null} collapsible collapsed={!!this.props.collapsed}>
             <div className="logo">
@@ -62,8 +63,8 @@ class SiderUI extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     debugger;
-    const { collapsed } = state.main;
-    return { collapsed };
+    const { collapsed ,data} = state.main;
+    return { collapsed ,menu:data};
 }
 
 export default withRouter(connect(mapStateToProps)(SiderUI));

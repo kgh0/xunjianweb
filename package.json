@@ -13,7 +13,7 @@
     "http-proxy-middleware": "^0.20.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "ol": "^6.1.1",
     "rc-tween-one": "^2.6.5",
     "react": "^16.12.0",
